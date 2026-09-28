@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie - AI Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>EduGenie</h1>
+        <p>Your AI-powered learning assistant</p>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="ask">Ask a Question</button>
+            <button class="tab-btn" data-tab="quiz">Generate Quiz</button>
+        </div>
+
+        <div id="ask-tab" class="tab-content active">
+            <textarea id="question-input" placeholder="Ask any academic question..."></textarea>
+            <button id="ask-btn">Get Answer</button>
+        </div>
+
+        <div id="quiz-tab" class="tab-content">
+            <input type="text" id="topic-input" placeholder="Enter a topic (e.g., Photosynthesis)">
+            <button id="quiz-btn">Generate Quiz</button>
+        </div>
+
+        <div id="loading" style="display: none;">Thinking... Please wait.</div>
+
+        <div id="result-section" style="display: none;">
+            <h2>Result</h2>
+            <pre id="output"></pre>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
